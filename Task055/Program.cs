@@ -15,25 +15,25 @@ double [,] newArray = GetMirrorArray(array);
 PrintArray(newArray);
     
 
-void PrintArray(double[,] matr)
+void PrintArray(double[,] matrix)
 {
-    for (int rows = 0; rows < matr.GetLength(0); rows++)
+    for (int rows = 0; rows < matrix.GetLength(0); rows++)
     {
-        for (int columns = 0; columns < matr.GetLength(0); columns++)
+        for (int columns = 0; columns < matrix.GetLength(0); columns++)
         {
-            Console.Write($" {matr[rows, columns]} ");
+            Console.Write($" {matrix[rows, columns]} ");
         }
         Console.WriteLine();
     }
 }
 
-void FillArray(double[,] matr)
+void FillArray(double[,] matrix)
 {
-    for (int rows = 0; rows < matr.GetLength(0); rows++)
+    for (int rows = 0; rows < matrix.GetLength(0); rows++)
     {
-        for (int columns = 0; columns < matr.GetLength(0); columns++)
+        for (int columns = 0; columns < matrix.GetLength(0); columns++)
         {
-            matr[rows, columns] = new Random().Next(1,11);
+            matrix[rows, columns] = new Random().Next(1,11);
         }
         Console.WriteLine();
     }
@@ -41,11 +41,14 @@ void FillArray(double[,] matr)
 
 double[,] GetMirrorArray(double[,] array)
 {
-double[,] newArray = new double[array.GetLength(1), array.GetLength(0)];
+    double[,] newArray = new double[array.GetLength(1), array.GetLength(0)];
 
-for (int i = 0; i < array.GetLength(0); i++)
-for (int j = 0; j < array.GetLength(1); j++)
-newArray[j, i] = array[i, j];
-
-return newArray;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            newArray[j, i] = array[i, j];
+        }
+    }
+    return newArray;
 }
