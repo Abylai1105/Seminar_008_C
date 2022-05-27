@@ -62,6 +62,7 @@ void PrintArray(double[,] matrix)
         Console.WriteLine();
     }
 }
+
 void FillArray(double[,] matrix)
 {
     for (int rows = 0; rows < matrix.GetLength(0); rows++)
