@@ -1,6 +1,10 @@
 ﻿// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, 
 // которая будет находить строку с наименьшей суммой элементов.
 
+using System;
+using static System.Console;
+Console.Clear();
+
 Console.Write("Введите количество строк m: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов n: ");
